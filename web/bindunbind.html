@@ -1,0 +1,37 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <p>Hola soy Edu, Feliz Navidad</p>
+        <input id="desactivar-evento" type="button" value=" Quitar el cambio de color cuando se hace click " >
+        <br>
+        <input id="activar-evento" type="button" value=" Activar el cambio de color cuando se hace click " >
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+        <script>
+    $(document).ready(function() { // Es parecido al window.onload... Pero mejor porque con el window.onload para que el javascript se implemente hay que esperar a que se carge toda la página con imágenes y demás. Sin embargo, con el $(document).ready(... sólo hay que esperar a que se carge el código HTML.
+    
+    var  cambioColor = function() {
+                
+                    if ($(this).css("color") != "rgb(255, 0, 0)") //si el color no es rojo que lo ponga rojo
+                        $(this).css("color", "red");
+                    else
+                        $(this).css("color", "blue");
+                }
+                $("p").bind("click mouseenter mouseleave", cambioColor);
+                $("#desactivar-evento").bind("click", function(){
+                    $("p").unbind("click", cambioColor ); })
+                $("#activar-evento").bind("click", function(){
+                    $("p").bind("click", cambioColor ); })
+                              
+    });
+    
+        </script>
+    </body>
+</html>

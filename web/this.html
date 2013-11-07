@@ -1,0 +1,27 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Ejemplo de this</title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    </head>
+    <body>
+        <button>Hazme clic</button>
+        <button>Hazme clic</button>
+        <button>Hazme clic</button>
+
+
+
+        <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js'></script>
+        <script>
+            $(function() {
+                $('button').click(function() {
+                    $(this).text("hola!"); //anima sólo en el que se realiza la acción
+                });
+            });
+        </script>
+    </body>
+</html>
