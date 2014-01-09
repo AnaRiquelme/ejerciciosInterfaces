@@ -1,0 +1,81 @@
+<!--
+To change this template, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <style>
+            ul,a
+            {
+                list-style: none;
+                text-decoration: none;
+                padding: 0;/*así evitamos que las listas tengan estilos como la tabulación*/
+                margin:0;
+            }
+            ul>li /*los hijos directos del primer ul se pondrán a la izq*/
+            {
+                float: left;
+            }
+            ul li ul
+            {
+                display: none;
+                position:absolute;/*te lo pone al mismo nivel que su padre*/
+                width: 140px;
+            }
+            ul li a
+            {
+                background-color: #000;
+                color:#fff;
+                padding: 10px 15px;
+                display: block; /*se pone así porque los elementos in-line están en línea y se pueden solapar si se ponen a modo block no*/
+            }
+            li:hover>ul/*que sean hijos directo de li*/
+            {
+                display: block;
+            }
+            ul li ul li 
+            {
+                position:relative; /*para quitarlo del flujo normal y poder moverlo donde queramos*/
+            }
+            ul li ul li ul
+            {
+                right: -140px; /*posiciona los menus*/
+                top: 0;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <ul>
+                <li><a>menu</a></li>
+                <li><a>menu</a>
+                    <ul>
+                        <li><a>submenu1</a></li>
+                        <li><a>submenu2</a>
+                            <ul>
+                                <li><a>submenu1</a></li>
+                                <li><a>submenu2</a>
+                                    <ul>
+                                        <li><a>submenu1</a></li>
+                                        <li><a>submenu2</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a>menu</a></li>
+                <li><a>menu</a>
+                    <ul>
+                        <li><a>submenu1</a></li>
+                        <li><a>submenu2</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </body>
+</html>
